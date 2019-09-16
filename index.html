@@ -62,6 +62,89 @@
       <div class="outer">
         <section id="main">
   
+    <article id="你（可能）不知道の-API" class="article article-type-你（可能）不知道の" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/16/API/" class="article-date">
+  <time datetime="2019-09-16T09:17:18.000Z" itemprop="datePublished">2019-09-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/16/API/">API</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>首先了解一下我们常用的API接口，API是什么呢？</p>
+<p>API即应用程序接口（application programming Interface）,是一些预先定义的函数，目的是提供应用程序与开发人员基于某软件或硬件得以访问一组例程的能力，而又无需访问源码，或理解内部工作机制的细节。</p>
+<p>操作系统提供的API是由函数、消息、数据结构、数据类型以及语句组成。这是实现的，现成的对象和方法。其主要目的是提高开发效率。</p>
+<p>好像API说来说去，就是一种函数。（哈哈~来自小陈的拙见）</p>
+<p>基础理论部分，JavaScript：ECMascript （规范语句和语法）、BOM和DOM（响应式布局 ），</p>
+<p>1、ECMAScript js的基本语法</p>
+<p>2、DOM 文档对象模型，操作的是页面的元素</p>
+<p>3、BOM 浏览器对象模型，操作是浏览器</p>
+<p><strong>DOM的概念：</strong>文档对象模型（Document Object Model，简称DOM），是<a href="https://links.jianshu.com/go?to=http%3A%2F%2Fbaike.baidu.com%2Fitem%2FW3C" target="_blank" rel="noopener">W3C</a>组织推荐的处理可扩展标志语言的标准编程接口。在网页上，组织页面（或文档）的对象被组织在一个树形结构中，用来表示文档中对象的标准模型就称为DOM。</p>
+<p>DOM经常进行的操作：获取元素、动态创建元素、对元素进行操作(设置其属性或调用其方法)。</p>
+<p>DOM节点分为标签节点（元素节点）、注释节点、文本节点、属性节点及其他。节点之间的关系就是DOM节点树，可以想象成一棵大树。</p>
+<p><strong>页面中的每一个标签都是一个元素</strong></p>
+<p>节点（node）：网页中的所有内容都是节点，元素、属性、文本、注释节点，页面中所有的元素都是节点，标签 文本 属性</p>
+<p>根节点（root）<strong>:</strong>html</p>
+<p>文档：html文件，一个网页可以称为文档，由于万物皆对象（万物皆可盘， hold住~世界就是你的），这个文档也可以看成一个对象。</p>
+<p>元素：网页中的标签</p>
+<p>属性：标签的属性</p>
+<p>由文档中所有的元素组成的树形结构图，叫做DOM（文档树）。</p>
+<p>树上满是分枝，主要包括，Events（事件），Nodes（节点），Ranges（范围操作），Traversal（遍历），Sets（节点集合），而它的每个分枝上结满了果实，接下来详细介绍一下它的果子。</p>
+<p>Events（事件）：什么时候做什么事，触发—–响应，大多数 Node.js 核心 API 构建于惯用的异步事件驱动架构，其中某些类型的对象（又称触发器，Emitter）会触发命名事件来调用函数（又称监听器，Listener）。</p>
+<p>获取按钮给按钮注册事件  <strong>addEventListener( )，</strong> 事件名称：click   事件源：谁触发的事件   </p>
+<p><strong>事件三要素</strong>：</p>
+<p>事件源:触发(被)事件的元素</p>
+<p>事件类型:事件的触发方式(例如鼠标点击或键盘点击)</p>
+<p>事件处理程序:事件触发后要执行的代码(函数形式)</p>
+<p><strong>事件处理函数：</strong></p>
+<p><strong>btn.onclick: function  {</strong></p>
+<p>​       <strong>alert ( ‘….’ );</strong></p>
+<p><strong>}</strong>    </p>
+<p><strong>同步函数，异步触发，通过回调函数处理异步。</strong></p>
+<p><strong>动态创建元素的三种方式：</strong></p>
+<p>doucument.write() 、element.innerHTML  、document.createElement()  </p>
+<p>appendehild 追加子元素 </p>
+<p><strong>BOM(Browser Object Model) 是指浏览器对象模型</strong>，浏览器对象模型提供了独立于内容的、可以与浏览器窗口进行互动的对象结构。</p>
+<p>BOM由多个对象组成，其中代表浏览器窗口的Window <strong>（顶级对象），</strong>对象是BOM的顶层对象，其他对象都是该对象的子对象。</p>
+<p>顶级对象window，window是浏览器的顶级对象，当调用window下的属性和方法时，可以省略window注意：window下一个特殊的属性 window.name。</p>
+<p>我们在浏览器中的一些操作都可以使用BOM的方式进行编程处理，比如：刷新浏览器、后退、前进、在浏览器中输入<strong>URL</strong>（统一资源定位符 Uniform Resource Locator, URL)  and so on………</p>
+<p><strong>js中加载事件 ：onload 页面加载完成，不过onload 不仅只是Windows的事件！</strong></p>
+<p>扯个话进来，关于对话框 【<strong>alert() 、prompt() 、confirm()</strong>】 ps ：用户体验不好，外观不美观，通常不用来开发。</p>
+<p><strong>定时器 : setTimeout() 和 clearTimeout()</strong></p>
+<p>setTimeout ( ) 定时炸弹 （隔一段时间执行，仅一次）</p>
+<p>clearTimeout ( ) 取消炸弹</p>
+<p>setInterval（）闹钟 （隔一段时间执行，会重复）  </p>
+<p><strong>location对象</strong></p>
+<p>location对象是window对象下的一个属性，时候的时候可以省略window对象,location可以获取或者设置浏览器地址栏的URL。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/09/16/API/" data-id="ck0m75a8c0001i0tc0z60sy1v" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/API/">API</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-css入门小结" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/09/16/css入门小结/" class="article-date">
@@ -106,7 +189,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/16/css入门小结/" data-id="ck0m70uq000003ctcbjjzp5kt" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/16/css入门小结/" data-id="ck0m75a9d0007i0tc4jv888vu" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
@@ -168,7 +251,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/16/面试题之常见的坑/" data-id="ck0m70usb000d3ctcrrs42e5a" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/16/面试题之常见的坑/" data-id="ck0m75a9t000bi0tcv5vr5j8q" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面试题/">面试题</a></li></ul>
@@ -218,7 +301,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/16/JavaScript类和模块/" data-id="ck0m70uq900013ctc2zyqnxqu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/16/JavaScript类和模块/" data-id="ck0m75a7z0000i0tcv71xjr82" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -276,7 +359,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/16/作用域和变量学习总结/" data-id="ck0m70urw000a3ctcqlqyssck" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/16/作用域和变量学习总结/" data-id="ck0m75a9p000ai0tcnadkn7f2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -317,7 +400,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/12/开博大吉/" data-id="ck0m70uqj00033ctcf4qwueuz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/12/开博大吉/" data-id="ck0m75a9i0008i0tcwhp64wht" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开博/">开博</a></li></ul>
@@ -368,7 +451,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/12/hello-world/" data-id="ck0m70ure00093ctc1hf33nmb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/12/hello-world/" data-id="ck0m75a8m0003i0tcydeub8vf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -391,7 +474,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开博/">开博</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试题/">面试题</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/API/">API</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开博/">开博</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试题/">面试题</a></li></ul>
     </div>
   </div>
 
@@ -401,7 +484,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/开博/" style="font-size: 10px;">开博</a> <a href="/tags/面试题/" style="font-size: 10px;">面试题</a>
+      <a href="/tags/API/" style="font-size: 10px;">API</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/开博/" style="font-size: 10px;">开博</a> <a href="/tags/面试题/" style="font-size: 10px;">面试题</a>
     </div>
   </div>
 
@@ -423,6 +506,10 @@
       <ul>
         
           <li>
+            <a href="/2019/09/16/API/">API</a>
+          </li>
+        
+          <li>
             <a href="/2019/09/16/css入门小结/">css入门小结</a>
           </li>
         
@@ -436,10 +523,6 @@
         
           <li>
             <a href="/2019/09/16/作用域和变量学习总结/">作用域和变量学习总结</a>
-          </li>
-        
-          <li>
-            <a href="/2019/09/12/开博大吉/">开博大吉</a>
           </li>
         
       </ul>
