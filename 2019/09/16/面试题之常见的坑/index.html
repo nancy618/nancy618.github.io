@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>面试题之常见的坑 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一、在http请求中，get请求和post请求有什么主要区别？ 首先要清楚GET和POST是什么?  是HTTP协议中的两种发送请求的方法。 那HTTP是什么呢? HTTP是基于TCP/IP的关于数据如何在万维网中如何通信的协议。HTTP的底层是TCP/IP。所以GET和POST的底层也是TCP/IP，也就是说，GET/POST都是TCP链接。GET和POST能做的事情是一样一样的。你要给GET加">
+<meta name="keywords" content="面试题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面试题之常见的坑">
+<meta property="og:url" content="http://yoursite.com/2019/09/16/面试题之常见的坑/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一、在http请求中，get请求和post请求有什么主要区别？ 首先要清楚GET和POST是什么?  是HTTP协议中的两种发送请求的方法。 那HTTP是什么呢? HTTP是基于TCP/IP的关于数据如何在万维网中如何通信的协议。HTTP的底层是TCP/IP。所以GET和POST的底层也是TCP/IP，也就是说，GET/POST都是TCP链接。GET和POST能做的事情是一样一样的。你要给GET加">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-09-16T09:09:03.559Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="面试题之常见的坑">
+<meta name="twitter:description" content="一、在http请求中，get请求和post请求有什么主要区别？ 首先要清楚GET和POST是什么?  是HTTP协议中的两种发送请求的方法。 那HTTP是什么呢? HTTP是基于TCP/IP的关于数据如何在万维网中如何通信的协议。HTTP的底层是TCP/IP。所以GET和POST的底层也是TCP/IP，也就是说，GET/POST都是TCP链接。GET和POST能做的事情是一样一样的。你要给GET加">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-面试题之常见的坑" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/16/面试题之常见的坑/" class="article-date">
+  <time datetime="2019-09-16T09:00:00.000Z" itemprop="datePublished">2019-09-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      面试题之常见的坑
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>一、在http请求中，get请求和post请求有什么主要区别？</strong></p>
+<p>首先要清楚GET和POST是什么? </p>
+<p>是HTTP协议中的两种发送请求的方法。</p>
+<p>那HTTP是什么呢?</p>
+<p>HTTP是基于TCP/IP的关于数据如何在万维网中如何通信的协议。HTTP的底层是TCP/IP。所以GET和POST的底层也是TCP/IP，也就是说，GET/POST都是TCP链接。GET和POST能做的事情是一样一样的。你要给GET加上request body，给POST带上url参数，技术上是完全行的通的。最直观的区别就是GET把参数包含在URL中，POST通过request body传递参数。</p>
+<p>GET和POST还有一个重大区别，简单的说：GET产生一个TCP数据包;POST产生两个TCP数据包。复杂的讲：对于GET方式的请求，浏览器会把http header和data一并发送出去，服务器响应200(返回数据);</p>
+<p>而对于POST，浏览器先发送header，服务器响应100 continue，浏览器再发送data，服务器响应200 ok(返回数据)。因为POST需要两步，时间上消耗的要多一点，看起来GET比POST更有效。因此Yahoo团队有推荐用GET替换POST来优化网站性能。但这是一个坑!跳入需谨慎。</p>
+<p><strong>二、什么是Rem布局？</strong></p>
+<p>em作为font-size的单位时，其代表父元素的字体大小，em作为其他属性单位时，代表自身字体大小——MDN。</p>
+<p>rem和em单位一样，都是一个相对单位。区别在于：em是相对于元素的父元素的font-size进行计算；rem是相对于根元素html的font-size进行计算。</p>
+<p>由此可见：rem不仅避免了复杂的层级关系，并且实现了类似于em单位的功能。默认情况下浏览器给的字体大小是16px，因此按照转化关系 16px = 1rem。</p>
+<p>em 或 rem 单位进行相对布局的时候，会比% 百分比的方式会更加灵活，而且可以支持浏览器的字体大小调整和缩放等的正常显示。 又因为em是相对于元素的父元素的font-size进行计算，所以开发中建议采用rem布局单位。 </p>
+<p><strong>PS：rem布局自适应效果很好，可以让手机端pc端实现响应式布局。</strong></p>
+<p><strong>三、JavaScript中有哪些数据类型？</strong></p>
+<p>数据类型有六种，其中有五种<strong>基本数据类型</strong>和<strong>一种对象类型（复杂数据类型）</strong>。基本数据类型把数据名和值直接存储在栈当中，而复杂数据类型在栈中存储数据名和一个堆的地址，在堆中存储对象的属性及值。访问时先从栈获取地址（即栈中存放的是对象的引用），再到堆中拿出相应的值。</p>
+<p><strong>基本数据类型：</strong></p>
+<p>1.number：任意的数字。</p>
+<p>2.string：任意的字符串。</p>
+<p>3.boolean：只有两个值，true和false。</p>
+<p>4.null：只有一个值，null。</p>
+<p>5.undefined：只有一个值，undefined。</p>
+<p>这五种基本数据类型相信大家都明白，就不做展开了。</p>
+<p><strong>对象类型（object）：</strong></p>
+<p>常见的有function（可以把它理解为一种可以执行的对象），array等。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/09/16/面试题之常见的坑/" data-id="ck0m6svyw000838tccpl7ax2o" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面试题/">面试题</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/09/16/JavaScript类和模块/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">JavaScript类和模块</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开博/">开博</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试题/">面试题</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/开博/" style="font-size: 10px;">开博</a> <a href="/tags/面试题/" style="font-size: 10px;">面试题</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/09/16/面试题之常见的坑/">面试题之常见的坑</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/16/JavaScript类和模块/">JavaScript类和模块</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/16/作用域和变量学习总结/">作用域和变量学习总结</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/12/开博大吉/">开博大吉</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/12/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
