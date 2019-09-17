@@ -5,15 +5,20 @@
   
 
   
-  <title>Hexo</title>
+  <title>JS基础之数组与伪数组 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+  <meta name="description" content="数组的本质本质上，数组属于一种特殊的对象。typeof运算符会返回数组的类型是object。 而js中数组的本质： 人类理解：数组就是数据的有序集合； js理解：数据就是原型链中有 Array、prototype的对象； 目前知道的伪数组有： Arguments对象、document.qutryselectAll( ‘div’) 伪数组和数组的区别： 真数组的长度是可变的，是内置的属性，伪数组的长">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS基础之数组与伪数组">
+<meta property="og:url" content="http://yoursite.com/2019/09/17/JS基础之数组与伪数组/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="数组的本质本质上，数组属于一种特殊的对象。typeof运算符会返回数组的类型是object。 而js中数组的本质： 人类理解：数组就是数据的有序集合； js理解：数据就是原型链中有 Array、prototype的对象； 目前知道的伪数组有： Arguments对象、document.qutryselectAll( ‘div’) 伪数组和数组的区别： 真数组的长度是可变的，是内置的属性，伪数组的长">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-09-17T09:27:26.626Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="JS基础之数组与伪数组">
+<meta name="twitter:description" content="数组的本质本质上，数组属于一种特殊的对象。typeof运算符会返回数组的类型是object。 而js中数组的本质： 人类理解：数组就是数据的有序集合； js理解：数据就是原型链中有 Array、prototype的对象； 目前知道的伪数组有： Arguments对象、document.qutryselectAll( ‘div’) 伪数组和数组的区别： 真数组的长度是可变的，是内置的属性，伪数组的长">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -60,12 +65,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-开博大吉" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-JS基础之数组与伪数组" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/09/12/开博大吉/" class="article-date">
-  <time datetime="2019-09-12T10:16:50.000Z" itemprop="datePublished">2019-09-12</time>
+    <a href="/2019/09/17/JS基础之数组与伪数组/" class="article-date">
+  <time datetime="2019-09-17T09:26:11.000Z" itemprop="datePublished">2019-09-17</time>
 </a>
     
   </div>
@@ -75,8 +78,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/12/开博大吉/">开博大吉</a>
+    <h1 class="article-title" itemprop="name">
+      JS基础之数组与伪数组
     </h1>
   
 
@@ -84,80 +87,55 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="开博大吉"><a href="#开博大吉" class="headerlink" title="开博大吉"></a>开博大吉</h1><ul>
-<li>我开博了，欢迎大家来阅读</li>
-</ul>
+        <h2 id="数组的本质"><a href="#数组的本质" class="headerlink" title="数组的本质"></a>数组的本质</h2><p>本质上，数组属于一种特殊的对象。<code>typeof</code>运算符会返回数组的类型是<code>object</code>。</p>
+<p>而js中数组的本质：</p>
+<p>人类理解：数组就是数据的有序集合；</p>
+<p>js理解：数据就是原型链中有 Array、prototype的对象；</p>
+<p>目前知道的伪数组有：</p>
+<p>Arguments对象、document.qutryselectAll( ‘div’)</p>
+<p>伪数组和数组的区别：</p>
+<p>真数组的长度是可变的，是内置的属性，伪数组的长度不可变，是自定义的一个属性 。真数组可以使用数组中的方法 ，伪数组不可以实用数组中的方法 。真数组可以访问数组的方法 伪数组不能直接访问数组的方法。</p>
+<p>数组的特殊性体现在，它的键名是按次序排列的一组整数（0，1，2…）。</p>
+<p>五个false值：0、NaN、字符串空值 ‘ ‘ 、undefined、null</p>
+<p><strong>function 和 Function 区别</strong></p>
+<p>Function是一个<a href="https://link.zhihu.com/?target=https%3A//www.baidu.com/s%3Fwd%3D%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%26tn%3D44039180_cpr%26fenlei%3Dmv6quAkxTZn0IZRqIHckPjm4nH00T1Y4m199uAD4nhD3ujuBm100IAYqnWm3PW64rj0d0AP8IA3qPjfsn1bkrjKxmLKz0ZNzUjdCIZwsrBtEXh9GuA7EQhF9pywdQhPEUiqkIyN1IA-EUBt1n101rHmzPHR" target="_blank" rel="noopener">构造函数</a>，用于动态构建一个函数。构造名称必须和类名保持一致</p>
+<p>function是关键字，通过function生成的函数实际上是一个Function对象实例。</p>
+<p>PS：而所有的function 是继承了Function的属性。</p>
+<p>数组的API：</p>
+<p>Array.prototype.forEach</p>
+<p>Array.prototype.concat</p>
+<p>Array.prototype.sort</p>
+<p>Array.prototype.toString</p>
+<p>Array.prototype.join</p>
+<p><a href="https://link.zhihu.com/?target=http%3A//Array.prototype.map" target="_blank" rel="noopener">Array.prototype.map</a></p>
+<p>Array.prototype.filter</p>
+<p>Array.prototype.reduce</p>
+<p>详见MDN</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/12/开博大吉/" data-id="ck0nmwfvb000lqgtcmj623zdx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/17/JS基础之数组与伪数组/" data-id="ck0nmwfru0000qgtcp76j79j2" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开博/">开博</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
 
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/09/12/hello-world/" class="article-date">
-  <time datetime="2019-09-12T10:01:16.762Z" itemprop="datePublished">2019-09-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/12/hello-world/">Hello World</a>
-    </h1>
+    <a href="/2019/09/16/你真的了解—Git吗？/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">你真的了解—Git吗？</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/12/hello-world/" data-id="ck0nmwfvg000mqgtczro5bc72" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-  
-
-
-  <nav id="page-nav">
-    
-    <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-  </nav>
 
 </section>
         
