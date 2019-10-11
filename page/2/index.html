@@ -62,6 +62,114 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-JavaScript类和模块" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/16/JavaScript类和模块/" class="article-date">
+  <time datetime="2019-09-16T02:59:44.000Z" itemprop="datePublished">2019-09-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/16/JavaScript类和模块/">JavaScript类和模块</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在JavaScript中，类的实现是<strong>基于原型继承机制</strong>的。如果两个实例都从同一个原型对象上继承了属性，它们是同一个类的实例。ES5给属性特性增加了方法支持（getter、setter、可枚举型、可写性和可配置性），而且增加了对象可扩展性的限制。</p>
+<p>构造函数，从某种意义上讲，定义构造函数即是定义类，所以构造函数名首字母要大写，而普通的函数都是首字母小写。但是这个函数有两点局限性：只是通过函数名来判断函数是否存在，而没有关注细节信息(函数参数、参数类型等)。不能应用于内置类型，因为内置类型的方法是不可枚举的。</p>
+<p>关于类的标识，<strong>原型对象是类的唯一标识</strong>，如果两个构造函数的prototype属性指向同一个原型对象，那么这两个构造函数创建的实例是属于同一类的。 <strong>构造函数通常用做类名</strong>，当使用instanceof运算符来检测对象是否属于某个类时会用到构造函数。</p>
+<p>今天看JavaScript第九章看到中间部分有一个叫鸭式辩型的东西，什么叫鸭式辩型呢？</p>
+<p>上面提到的各种技术都有些问题，规避掉这些问题的办法是：<strong>不要关注”对象的类是什么”，而是关注”对象能做什么”</strong>这种思考问题的方式在python和ruby中非常普遍，被称为“鸭式辨型”。（像鸭子一样走路、游泳并且嘎嘎叫的鸟就是鸭子）。</p>
+<p>对于javascript程序员来说，“如果一个对象可以像鸭子一样走路、游泳并且嘎嘎叫，就认为这个对象就是鸭子，哪怕它并不是从鸭子类的原型对象而继承而来的”</p>
+<p>这个函数有<strong>两点局限性：</strong>只是通过函数名来判断函数是否存在，而没有关注细节信息(函数参数、参数类型等)。不能应用于内置类型，因为内置类型的方法是不可枚举的。</p>
+<p>  无聊和困惑的时候可以多逛逛CSDN和博客园、开源中国等优秀的网站。看看大神们写的博客，就算一开始不会写，但是看得多了也会有一定的经验积累。偶尔看到一篇比较适合小白初步学习JavaScript类和模块的一段代码，分享如下：<a href="https://links.jianshu.com/go?to=https%3A%2F%2Fblog.csdn.net%2Fweixin_34221332%2Farticle%2Fdetails%2F88433625" target="_blank" rel="noopener">https://blog.csdn.net/weixin_34221332/article/details/88433625</a></p>
+<p><strong>模块</strong></p>
+<p>将代码组织到类中的一个重要原因是，让代码更加“模块化”，可以在很多不同场景中实现代码的重用。但类不是唯一的模块化代码方式。一般来讲，模块是一个独立的javascript文件。模块文件可以包含一个类定义、一组相关的类、一个使用函数库或者是一些待执行的代码。只要以模块的形式编写代码。</p>
+<p>任何javascript代码段就可以当做一个模块，javascript中并没有定义用于支持模块的语言结构（但imports和exports的确javascript保留的关键字，因此javascript的未来版本可能会支持），这也意味着在javascript中编写模块化的代码更多是遵循某一种代码约定。</p>
+<p>有志者事竟成，加油，You can do better ！</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/09/16/JavaScript类和模块/" data-id="ck1lo50se0000sotcb0ab3f3z" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-作用域和变量学习总结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/16/作用域和变量学习总结/" class="article-date">
+  <time datetime="2019-09-16T01:30:48.000Z" itemprop="datePublished">2019-09-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/16/作用域和变量学习总结/">作用域和变量学习总结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><p>首先，我知道这篇文章很无聊，是关于 js 中的作用域和变量学习的总结。说的不痛不痒，单纯是学习笔记。昨天老师问我知道this和ES5、ES6是啥吗？问的我一头雾水，只知道this是一个对象。至于它们的用途一无所知，听他讲完之后渐渐明白一点儿。</p>
+<img src="/2019/09/16/作用域和变量学习总结/1.webp" title="说大事专用图">
+</li>
+<li><p>逛论坛的时候看到了这样的一句话，确定this的值：“谁调用我，我就指向谁” 而this的值：只有在代码运行时，才能确定！ 遵循：最小作用域最强原则 ，this—&gt;指代对象—&gt;谁调用this所在的函数，谁就是指代对象！this调用成员变量：<strong>this. ;</strong>  this调用成员函数: <strong>this. ;</strong> this调用构造方法: <strong>this();</strong>    </p>
+</li>
+<li><p>感觉无论是哪种编程语言，代码之间都是有相互联系在里面的，咳咳~一本正经的胡说八道。学习之前要弄清楚基本类型和引用类型的值，ES变量包含两种不同数据类型的值：基本类型值和引用类型值。比如在ES5中，js有两种形式的作用域：全局作用域和函数作用域。而在ES6当中新增了一个块级作用域（最近的大括号涵盖的范围），ES6(ES2015) 新增了 let 和 const 命令，但是仅限于let方式申明的变量。</p>
+</li>
+<li><p>一个变量的作用域（scope）是程序源代码中定义这个变量的区域。 全局变量拥有全局作用域，在javaScript代码中任何地方都有定义的。 然而在函数内声明的变量只是在函数内部有定义，他们是局部变量，作用域也只是在局部。</p>
+</li>
+<li><p>在es5中变量作用域分为两种：全局变量，局部变量； <strong>局部变量</strong>：写在函数体内部，其中函数中所传递的参数也是局部变量（小括号中的）,仅在定义的部分能够使用； <strong>全局变量</strong>：写在函数体外部的变量，其中在函数中使用但未用var声明的变量也是全局变量，可以在全局中任何部分使用。</p>
+</li>
+<li><p><strong>在函数体内，局部变量的优先级要高于全局变量。如果在函数体内重新声明一个与局部变量重名的变量，局部变量就会覆盖全局变量的值。</strong></p>
+<img src="/2019/09/16/作用域和变量学习总结/2.webp" title="说大事专用图">
+
+</li>
+</ul>
+<blockquote>
+<p>编程之路漫漫其修远兮，吾将上下而求索。FT╰(●’◡’●)╮ </p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/09/16/作用域和变量学习总结/" data-id="ck1lo50uq000tsotcp94sqigk" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-开博大吉" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/09/12/开博大吉/" class="article-date">
@@ -91,7 +199,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/12/开博大吉/" data-id="ck0nmwfvb000lqgtcmj623zdx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/12/开博大吉/" data-id="ck1lo50tn000gsotc4449h9c6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开博/">开博</a></li></ul>
@@ -142,7 +250,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/12/hello-world/" data-id="ck0nmwfvg000mqgtczro5bc72" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/12/hello-world/" data-id="ck1lo50ta0008sotcaturcrms" class="article-share-link">Share</a>
       
       
     </footer>
@@ -170,7 +278,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/API/">API</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开博/">开博</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试题/">面试题</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/API/">API</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开博/">开博</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试题/">面试题</a></li></ul>
     </div>
   </div>
 
@@ -180,7 +288,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/API/" style="font-size: 10px;">API</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/开博/" style="font-size: 10px;">开博</a> <a href="/tags/面试题/" style="font-size: 15px;">面试题</a>
+      <a href="/tags/API/" style="font-size: 10px;">API</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/开博/" style="font-size: 10px;">开博</a> <a href="/tags/面试题/" style="font-size: 15px;">面试题</a>
     </div>
   </div>
 
@@ -189,7 +297,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li></ul>
     </div>
   </div>
 
@@ -202,6 +310,14 @@
       <ul>
         
           <li>
+            <a href="/2019/10/11/数组方法map和forEach的使用方法/">数组方法map和forEach的使用方法</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/26/初识Vue通信/">初识Vue通信</a>
+          </li>
+        
+          <li>
             <a href="/2019/09/17/JS基础之数组与伪数组/">JS基础之数组与伪数组</a>
           </li>
         
@@ -211,14 +327,6 @@
         
           <li>
             <a href="/2019/09/16/kinase/">kinase</a>
-          </li>
-        
-          <li>
-            <a href="/2019/09/16/宝藏平台——微信小程序/">宝藏平台——微信小程序</a>
-          </li>
-        
-          <li>
-            <a href="/2019/09/16/JavaScript高级（学习笔记）/">JavaScript高级（学习笔记）</a>
           </li>
         
       </ul>

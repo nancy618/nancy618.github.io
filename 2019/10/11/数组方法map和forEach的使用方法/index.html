@@ -5,20 +5,20 @@
   
 
   
-  <title>JS基础之数组与伪数组 | Hexo</title>
+  <title>数组方法map和forEach的使用方法 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="数组的本质本质上，数组属于一种特殊的对象。typeof运算符会返回数组的类型是object。 而js中数组的本质： 人类理解：数组就是数据的有序集合； js理解：数据就是原型链中有 Array、prototype的对象； 目前知道的伪数组有： Arguments对象、document.qutryselectAll( ‘div’) 伪数组和数组的区别： 真数组的长度是可变的，是内置的属性，伪数组的长">
+  <meta name="description" content="map和forEach的使用方法都是循环遍历数组中的每一项，每一次执行匿名函数都支持三个参数，数组中的当前项item，当前项的索引index，原始数组input。匿名函数中的this都是指window，只能遍历数组。 map() 方法按照原数组元素的顺序进行遍历处理，会返回一个新的数组，当map每次执行的方法有返回值即为新数组对应的元素的值，无返回值则新数组对应的元素值为undefined。map">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JS基础之数组与伪数组">
-<meta property="og:url" content="http://yoursite.com/2019/09/17/JS基础之数组与伪数组/index.html">
+<meta property="og:title" content="数组方法map和forEach的使用方法">
+<meta property="og:url" content="http://yoursite.com/2019/10/11/数组方法map和forEach的使用方法/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="数组的本质本质上，数组属于一种特殊的对象。typeof运算符会返回数组的类型是object。 而js中数组的本质： 人类理解：数组就是数据的有序集合； js理解：数据就是原型链中有 Array、prototype的对象； 目前知道的伪数组有： Arguments对象、document.qutryselectAll( ‘div’) 伪数组和数组的区别： 真数组的长度是可变的，是内置的属性，伪数组的长">
+<meta property="og:description" content="map和forEach的使用方法都是循环遍历数组中的每一项，每一次执行匿名函数都支持三个参数，数组中的当前项item，当前项的索引index，原始数组input。匿名函数中的this都是指window，只能遍历数组。 map() 方法按照原数组元素的顺序进行遍历处理，会返回一个新的数组，当map每次执行的方法有返回值即为新数组对应的元素的值，无返回值则新数组对应的元素值为undefined。map">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-17T09:27:26.626Z">
+<meta property="og:updated_time" content="2019-10-11T05:06:06.937Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JS基础之数组与伪数组">
-<meta name="twitter:description" content="数组的本质本质上，数组属于一种特殊的对象。typeof运算符会返回数组的类型是object。 而js中数组的本质： 人类理解：数组就是数据的有序集合； js理解：数据就是原型链中有 Array、prototype的对象； 目前知道的伪数组有： Arguments对象、document.qutryselectAll( ‘div’) 伪数组和数组的区别： 真数组的长度是可变的，是内置的属性，伪数组的长">
+<meta name="twitter:title" content="数组方法map和forEach的使用方法">
+<meta name="twitter:description" content="map和forEach的使用方法都是循环遍历数组中的每一项，每一次执行匿名函数都支持三个参数，数组中的当前项item，当前项的索引index，原始数组input。匿名函数中的this都是指window，只能遍历数组。 map() 方法按照原数组元素的顺序进行遍历处理，会返回一个新的数组，当map每次执行的方法有返回值即为新数组对应的元素的值，无返回值则新数组对应的元素值为undefined。map">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -65,10 +65,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-JS基础之数组与伪数组" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-数组方法map和forEach的使用方法" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/09/17/JS基础之数组与伪数组/" class="article-date">
-  <time datetime="2019-09-17T09:26:11.000Z" itemprop="datePublished">2019-09-17</time>
+    <a href="/2019/10/11/数组方法map和forEach的使用方法/" class="article-date">
+  <time datetime="2019-10-11T05:04:18.000Z" itemprop="datePublished">2019-10-11</time>
 </a>
     
   </div>
@@ -79,7 +79,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      JS基础之数组与伪数组
+      数组方法map和forEach的使用方法
     </h1>
   
 
@@ -87,35 +87,24 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="数组的本质"><a href="#数组的本质" class="headerlink" title="数组的本质"></a>数组的本质</h2><p>本质上，数组属于一种特殊的对象。<code>typeof</code>运算符会返回数组的类型是<code>object</code>。</p>
-<p>而js中数组的本质：</p>
-<p>人类理解：数组就是数据的有序集合；</p>
-<p>js理解：数据就是原型链中有 Array、prototype的对象；</p>
-<p>目前知道的伪数组有：</p>
-<p>Arguments对象、document.qutryselectAll( ‘div’)</p>
-<p>伪数组和数组的区别：</p>
-<p>真数组的长度是可变的，是内置的属性，伪数组的长度不可变，是自定义的一个属性 。真数组可以使用数组中的方法 ，伪数组不可以实用数组中的方法 。真数组可以访问数组的方法 伪数组不能直接访问数组的方法。</p>
-<p>数组的特殊性体现在，它的键名是按次序排列的一组整数（0，1，2…）。</p>
-<p>五个false值：0、NaN、字符串空值 ‘ ‘ 、undefined、null</p>
-<p><strong>function 和 Function 区别</strong></p>
-<p>Function是一个<a href="https://link.zhihu.com/?target=https%3A//www.baidu.com/s%3Fwd%3D%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%26tn%3D44039180_cpr%26fenlei%3Dmv6quAkxTZn0IZRqIHckPjm4nH00T1Y4m199uAD4nhD3ujuBm100IAYqnWm3PW64rj0d0AP8IA3qPjfsn1bkrjKxmLKz0ZNzUjdCIZwsrBtEXh9GuA7EQhF9pywdQhPEUiqkIyN1IA-EUBt1n101rHmzPHR" target="_blank" rel="noopener">构造函数</a>，用于动态构建一个函数。构造名称必须和类名保持一致</p>
-<p>function是关键字，通过function生成的函数实际上是一个Function对象实例。</p>
-<p>PS：而所有的function 是继承了Function的属性。</p>
-<p>数组的API：</p>
-<p>Array.prototype.forEach</p>
-<p>Array.prototype.concat</p>
-<p>Array.prototype.sort</p>
-<p>Array.prototype.toString</p>
-<p>Array.prototype.join</p>
-<p><a href="https://link.zhihu.com/?target=http%3A//Array.prototype.map" target="_blank" rel="noopener">Array.prototype.map</a></p>
-<p>Array.prototype.filter</p>
-<p>Array.prototype.reduce</p>
-<p>详见MDN</p>
+        <p>map和forEach的使用方法都是循环遍历数组中的每一项，每一次执行匿名函数都支持三个参数，数组中的当前项item，当前项的索引index，原始数组input。匿名函数中的this都是指window，只能遍历数组。</p>
+<p>map() 方法按照原数组元素的顺序进行遍历处理，会返回一个新的数组，当map每次执行的方法有返回值即为新数组对应的元素的值，无返回值则新数组对应的元素值为undefined。map可以接收三个参数map(item, index, arr)分别为当前元素值、当前元素的索引和原数组对象。</p>
+<p>forEach()用于调用数组的每个元素，并将元素传递给回调函数，返回undefined。实际上forEach就相当于一个for循环，forEach同样也是接收三个参数，跟map一样。对于空数组是不会执行回调函数的。</p>
+<p>相同点：</p>
+<p>一、都是循环遍历数组；</p>
+<p>二、都接收三个参数：每一项、索引、原数组</p>
+<p>三、执行匿名函数中的this指向window</p>
+<p>不同点</p>
+<p>map()会返回一个新数组，存在映射关系，不会对空数组进行检测；</p>
+<p>forEach() 只是按顺序把数组中的元素传递给匿名函数使用，执行后返回undefine，会对空数组进行检测不会执行匿名函数。</p>
+<p>filter只有在回调函数执行前传入的数组元素才有效，在回调函数开始执行后才添加的元素将被忽略，而在回调函数开始执行到最后一个元素这一期间，数组元素被删除或者被更改的，将以回调函数访问到该元素的时间为准，被删除的元素将被忽略。新的数组只包含满足条件的项。</p>
+<p>那从性能方面如何去选择呢？</p>
+<p>肯定是 for &gt; forEach &gt; map，map 会返回一个等长数组，forEach 不会，所以 forEach 大于 map。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/17/JS基础之数组与伪数组/" data-id="ck1lo50t10004sotca2zpuzsq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/11/数组方法map和forEach的使用方法/" data-id="ck1lo50ts000isotcydnp25f6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -126,19 +115,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2019/09/26/初识Vue通信/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          初识Vue通信
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/09/16/你真的了解—Git吗？/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2019/09/26/初识Vue通信/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">你真的了解—Git吗？</div>
+      <div class="article-nav-title">初识Vue通信</div>
     </a>
   
 </nav>
